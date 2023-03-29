@@ -1,0 +1,66 @@
+.Logo {
+/* Auto layout */
+
+display: flex;
+flex-direction: row;
+align-items: flex-end;
+padding: 0px;
+gap: 4px;
+
+position: absolute;
+width: 148px;
+height: 24px;
+left: 24px;
+top: 20px;
+}
+.LogoText {
+    width: 120px;
+    height: 18px;
+
+    font-family: 'Myriad Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 100%;
+    /* identical to box height, or 18px */
+    color: #0040FF;
+
+}
+.LogoIcon {
+    width: 24px;
+height: 24px;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+    .Icon {
+        width: 24px;
+        height: 24px;
+        
+        /* Inside auto layout */
+        
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+    }
+}
+
+.SiderMenu {
+    /* Auto layout */
+
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 12px;
+
+position: absolute;
+width: 214px;
+height: 528px;
+left: 12px;
+top: 74px;
+}
+
