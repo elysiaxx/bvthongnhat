@@ -1,28 +1,11 @@
 import { lazy } from "react";
+import { Outlet } from "react-router-dom";
 
+import C627 from "../components/component627";
 
 import MainLayout from "../layout/dangkykham";
-// import Layout2 from "layout/Layout2";
-// import Loadable from "ui-component/Loadable";
-// import PrivateOutlet from "./PrivateOutlet";
-// // Pages routing
-// // const AboutUs = Loadable(lazy(() => import("pages/AboutUs/AboutUs")));
-// // const Contact = Loadable(lazy(() => import("pages/Contact/Contact")));
-// // const Event = Loadable(lazy(() => import("pages/Event")));
-import DangKyKham from '../pages/dangKyKham';
-// const Home = Loadable(lazy(() => import("pages/Home/Home")));
-// const Login = Loadable(lazy(() => import("pages/Login/Login")));
-// const Register = Loadable(lazy(() => import("pages/Register/Register")));
-// const News = Loadable(lazy(() => import("pages/News")));
-// const Search = Loadable(lazy(() => import("pages/Search")));
-// const Survey = Loadable(lazy(() => import("pages/Survey")));
-// const Instructors = Loadable(
-//     lazy(() => import("pages/Instructors/Instructors"))
-// );
-// const InstructorsProfile = Loadable(
-//     lazy(() => import("pages/InstructorsProfile/InstructorsProfile"))
-// );
-// ==============================|| MAIN ROUTING ||============================== //
+import TiepNhan from "../pages/dangkykham/tiepdon/tiepnhan";
+
 
 let MainRoutes = [
   {
@@ -30,9 +13,18 @@ let MainRoutes = [
     element: <MainLayout />,
     children: [
       {
-        path: "/",
-        element: <DangKyKham />,
+        path: "tiepdon",
+        element: <Outlet />,
+        children: [
+          { path: "tiepnhan", element: <TiepNhan /> },
+          { path: "datiepnhan", element: <></>}
+        ]
       },
+      
+      // {
+      //   path: "/test-components",
+      //   element: <LSCK />
+      // }
       // {
       //     path: "/dang-nhap",
       //     element: <SignIn></SignIn>,

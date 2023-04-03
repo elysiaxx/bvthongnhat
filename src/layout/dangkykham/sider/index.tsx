@@ -1,19 +1,26 @@
 import React from 'react';
 
-import type { MenuProps } from 'antd';
+import { 
+  Col, 
+  Divider, 
+  MenuProps,
+  Row, 
+  Space 
+} from 'antd';
 import { Menu, Typography } from 'antd';
 import Icon from '@ant-design/icons';
 
-import { ReactComponent as TiepDonSVG }from '../../../assets/icons/TiepDon.svg';
-import { ReactComponent as ThanhToanSVG }from '../../../assets/icons/ThanhToan.svg';
-import { ReactComponent as KhamBenhSVG }from '../../../assets/icons/KhamBenh.svg';
-import { ReactComponent as QuanLyCapCuuSVG }from '../../../assets/icons/QuanLyCapCuu.svg';
-import { ReactComponent as QuanLyNoiTruSVG }from '../../../assets/icons/QuanLyNoiTru.svg';
-import { ReactComponent as CanLamSangSVG }from '../../../assets/icons/CanLamSang.svg';
-import { ReactComponent as QuanLyDuocSVG }from '../../../assets/icons/QuanLyDuoc.svg';
-import { ReactComponent as QuanLyVatTuSVG }from '../../../assets/icons/QuanLyVatTu.svg';
-import { ReactComponent as QuanLyDanhMuc }from '../../../assets/icons/QuanLyDanhMuc.svg';
-import { ReactComponent as SpaSVG } from '../../../assets/icons/spa.svg';
+import { ReactComponent as TiepDonSVG } from '../../../assets/images/svg/TiepDon.svg';
+import { ReactComponent as ThanhToanSVG } from '../../../assets/images/svg/ThanhToan.svg';
+import { ReactComponent as KhamBenhSVG } from '../../../assets/images/svg/KhamBenh.svg';
+import { ReactComponent as QuanLyCapCuuSVG } from '../../../assets/images/svg/QuanLyCapCuu.svg';
+import { ReactComponent as QuanLyNoiTruSVG } from '../../../assets/images/svg/QuanLyNoiTru.svg';
+import { ReactComponent as CanLamSangSVG } from '../../../assets/images/svg/CanLamSang.svg';
+import { ReactComponent as QuanLyDuocSVG } from '../../../assets/images/svg/QuanLyDuoc.svg';
+import { ReactComponent as QuanLyVatTuSVG } from '../../../assets/images/svg/QuanLyVatTu.svg';
+import { ReactComponent as QuanLyDanhMuc } from '../../../assets/images/svg/QuanLyDanhMuc.svg';
+import { ReactComponent as SpaSVG } from '../../../assets/images/svg/spa.svg';
+
 import './sider.scss';
 
 
@@ -36,42 +43,59 @@ function getItem(
 type MenuItem = Required<MenuProps>['items'][number];
 
 const items: MenuProps['items'] = [
-    getItem('Tiếp đón', 'tiepdon', <Icon component={TiepDonSVG}/>), 
-    getItem('Thanh Toán', 'thanhtoan', <Icon component={ThanhToanSVG}/>),
-    getItem('Khám bệnh', '3', <Icon component={KhamBenhSVG}/>), 
-    getItem('Quản lý cấp cứu', '4', <Icon component={QuanLyCapCuuSVG}/>), 
-    getItem('Quản lý nội trú', '5', <Icon component={QuanLyNoiTruSVG}/>), 
-    getItem('Cận lâm sàng', '6', <Icon component={CanLamSangSVG}/>), 
-    getItem('Quản lý dược', '7', <Icon component={QuanLyDuocSVG}/>),
-    getItem('Quản lý vật tư', '8', <Icon component={QuanLyVatTuSVG}/>), 
-    getItem('Quản lý danh mục', '9', <Icon component={QuanLyDanhMuc}/>),  
+    getItem('Tiếp đón', 'tiepdon', <TiepDonSVG />), 
+    getItem('Thanh Toán', 'thanhtoan', <ThanhToanSVG />),
+    getItem('Khám bệnh', '3', <KhamBenhSVG />), 
+    getItem('Quản lý cấp cứu', '4', <QuanLyCapCuuSVG />), 
+    getItem('Quản lý nội trú', '5', <QuanLyNoiTruSVG />), 
+    getItem('Cận lâm sàng', '6', <CanLamSangSVG />), 
+    getItem('Quản lý dược', '7', <QuanLyDuocSVG />),
+    getItem('Quản lý vật tư', '8', <QuanLyVatTuSVG />), 
+    getItem('Quản lý danh mục', '9', <QuanLyDanhMuc />),  
 ]
 
 type Props = {
-    siderMenuSelected: string
+    siderMenuSelected: string,
+    setSiderMS: (key: string) => void
 }
 
-const Sider: React.FC<Props> = ({siderMenuSelected}) => {
+const Sider: React.FC<Props> = ({siderMenuSelected, setSiderMS}) => {
     const onClick: MenuProps['onClick'] = (e) => {
-        console.log('click ', e);
+        setSiderMS(e.key);
     };
     return (
-        <>
-            <div className='Logo'>
-                <Icon className='Icon' component={SpaSVG} style={{fontSize: '24px'}}/>
-                <Typography className='LogoText'>BV.Thống Nhất</Typography>
-            </div>
-            <div>
-            <Menu
-                className='SiderMenu'
+        <div className='dkk-sider-container'>
+          <Space
+            className='w-100 g-30'
+            direction='vertical'
+          >
+            <Row
+              className='sider-logo-box'
+              align={'middle'}
+            >
+              <Col>
+                <Icon 
+                  className='sider-logo-icon mr-6'
+                  component={SpaSVG}
+                />
+              </Col>
+              <Col>
+                <Typography className='sider-logo-title'>BV.Thống Nhất</Typography>
+              </Col>
+            </Row>
+            <Row>
+              <Menu
+                className='sider-menu'
                 onClick={onClick}
                 defaultSelectedKeys={[siderMenuSelected]}
                 defaultOpenKeys={['sub1']}
                 mode="inline"
+                inlineIndent={10}
                 items={items}
-            />
-            </div>
-        </>
+              /> 
+            </Row>
+          </Space>
+        </div>
     )
 };
 

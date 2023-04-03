@@ -1,66 +1,74 @@
-.Logo {
-/* Auto layout */
-
-display: flex;
-flex-direction: row;
-align-items: flex-end;
-padding: 0px;
-gap: 4px;
-
-position: absolute;
-width: 148px;
-height: 24px;
-left: 24px;
-top: 20px;
+.mr-6 {
+  margin-right: 6px !important;
 }
-.LogoText {
-    width: 120px;
-    height: 18px;
+.g-30 {
+  gap: 30px !important;
+}
 
-    font-family: 'Myriad Pro';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 100%;
-    /* identical to box height, or 18px */
+.dkk-sider-container {
+  background: #FFFFFF;
+  height: 100vh;
+}
+
+.sider-logo-box {
+  margin-top: 20px;
+  margin-left: 24px;
+}
+
+.sider-logo-icon {
+  height: 20px;
+  font-size: 20px;
+}
+.sider-logo-title {
+  width: 120px;
+  height: 18px;
+
+  font-family: 'Myriad Pro';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 100%;
+  /* identical to box height, or 18px */
+  color: #0040FF;
+}
+
+.sider-menu {
+  margin-left: 12px;
+}
+.sider-menu > .ant-menu-item {
+  width: 214px;
+  height: 48px;
+  
+  background: #FFFFFF;
+  border-radius: 8px;
+  margin: 0 !important;
+  margin-bottom: 12px !important;
+}
+.sider-menu > .ant-menu-item-selected {
+  background-color: #e6f4ff;
+  .ant-menu-title-content {
     color: #0040FF;
-
+  }
 }
-.LogoIcon {
+
+.sider-menu {
+  .ant-menu-item-icon {
+    height: 24px;
     width: 24px;
-height: 24px;
+  }
+  .ant-menu-title-content {
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    /* identical to box height, or 143% */
 
+    display: flex;
+    align-items: center;
+    /* Colors/Typo/Black/Text Sub */
 
-/* Inside auto layout */
+    color: rgba(0, 0, 0, 0.4);
 
-flex: none;
-order: 0;
-flex-grow: 0;
-    .Icon {
-        width: 24px;
-        height: 24px;
-        
-        /* Inside auto layout */
-        
-        flex: none;
-        order: 0;
-        flex-grow: 0;
-    }
+  }
 }
-
-.SiderMenu {
-    /* Auto layout */
-
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 0px;
-gap: 12px;
-
-position: absolute;
-width: 214px;
-height: 528px;
-left: 12px;
-top: 74px;
-}
-

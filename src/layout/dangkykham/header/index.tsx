@@ -1,8 +1,19 @@
-import React, {useState} from 'react';
-import {MenuProps, Menu, Row, Col, Divider, Avatar, Typography} from 'antd';
-import {BellOutlined} from '@ant-design/icons';
+import React, {useState, useEffect} from 'react';
+import { 
+  MenuProps,
+  Menu, 
+  Row, 
+  Col, 
+  Divider, 
+  Avatar, 
+  Typography, 
+  Space
+} from 'antd';
+import { 
+  ReactComponent as BellSVG 
+} from '../../../assets/images/svg/Bell.svg';
+
 import './header.scss';
-import { getHeaderMenu } from '../../../tools/functions';
 
 type MenuItem = Required<MenuProps>['items'][number];
 function getItem(
@@ -22,40 +33,70 @@ function getItem(
   }
 
 type Props = {
-    siderMenuSelected: string
+    headerMenu: MenuProps['items'] | undefined
 }
 
-const Header: React.FC<Props> = ({siderMenuSelected}) => {
-    const [current, setCurrent] = useState('tiepnhan');
-    const items = getHeaderMenu(siderMenuSelected);
+const Header: React.FC<Props> = ({headerMenu}) => {
+    const [current, setCurrent] = useState(headerMenu?.at(0)?.key);
     const onClick: MenuProps['onClick'] = (e) => {
-        console.log('click ', e);
         setCurrent(e.key);
     };
+    
+    useEffect(() => {
+        setCurrent(headerMenu?.at(0)?.key)
+    }, [headerMenu])
 
     return (
-    <Row className='Header-Box' style={{width: '100%', height: '100%'}}>
-        <Col className='Header-1' span={12}>
-            <Menu className='HeaderMenu'
-            onClick={onClick}
-            selectedKeys={[current]} 
-            mode="horizontal"
-            items={items}
-            />
-        </Col>
-        <Col className='Header-2' span={12}>
-            <BellOutlined />
-            <Divider 
-                type={'vertical'}
-            />
-            <Avatar 
-                src={'/avatar.png'}
-            />
-            <Typography>
-                DD. Nguyễn Đình Phong
-            </Typography>
-        </Col>
-    </Row>
+        <div className='header-container w-100'>
+          <Row
+            className='w-100 h-100'
+            justify={'space-between'}
+            align={'middle'}
+          >
+              <Col
+                className=''
+                span={18}
+              >
+                <Menu 
+                  className='header-menu w-100 no-border'
+                  onClick={onClick}
+                  selectedKeys={[current as string]} 
+                  mode="horizontal"
+                  items={headerMenu}
+                />
+              </Col>
+              <Col
+                className='mr-24'
+              >
+                <Space 
+                  direction='horizontal'
+                  split={<Divider className='account-divider' type='vertical' />}
+                >
+                  <Col>
+                    <BellSVG />
+                  </Col>
+                  <Col>
+                    <Row
+                      align={'middle'}
+                      gutter={8}
+                    >
+                      <Col span={4}>
+                        <Avatar
+                          className='account-avatar'
+                          src={'/avatar.png'}
+                        />
+                      </Col>
+                      <Col span={20}>
+                        <Typography className='account-name'>
+                          DD. Nguyễn Đình Phong
+                        </Typography>
+                      </Col>
+                    </Row>
+                  </Col>
+                </Space>
+              </Col>
+          </Row>
+        </div>
     )
 };
 

@@ -1,0 +1,129 @@
+.c627-container {
+    width: 662px;
+    background: #FFFFFF;
+    border-radius: 8px;
+    border: 1px solid #f0f0f0;
+}
+.ant-tabs-ink-bar{
+    height: 0 !important;
+    background: #f0f0f0 !important;
+}
+.ant-tabs-tab-active{
+    color: #000000 !important;
+    text-shadow: 0 0 0.25px currentcolor;
+}
+.ant-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+    color: #000000;
+}
+.ant-tabs-tab-btn {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    color: rgba(0, 0, 0, 0.4);
+}
+.ant-tabs {
+    padding: 16px;
+}
+.tab-content-row-box {
+    padding-top: 16px;
+    
+}
+
+.field-title-box {
+    display: flex;
+    align-items: center;
+    > .ant-typography {
+        width: 100px;
+        height: 20px;
+        font-family: 'Segoe UI';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        /* identical to box height, or 143% */
+
+        display: flex;
+        align-items: center;
+
+        /* Colors/Typo/Black/Title */
+
+        color: #000000;
+    }
+}
+.field-input-box {
+    .ant-input-affix-wrapper {
+        height: 40px;
+
+        background: #F2F3F4;
+        border-radius: 4px;
+    }
+    .ant-input {
+        background: #F2F3F4;
+        border-radius: 4px;
+    }
+
+    .input-no-suffix {
+        height: 40px;
+    }
+}
+
+.flex-end {
+    display: flex;
+    justify-content: end;
+}
+.update-button {
+    background: #0040FF;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 16px;
+
+    height: 44px;
+    > span {
+        width: 61px;
+        height: 20px;
+
+        /* Typo/Title Tiny */
+
+        font-family: 'Segoe UI';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 20px;
+        /* Colos/Typo/White/Title */
+
+        color: #FFFFFF;
+    }
+}
+.print-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    height: 44px;
+
+    /* Colors/Use/Đang xử lý */
+
+    background: #00B335;
+    border-radius: 4px;
+}
+.print-btn-icon {
+    color: #00B335;
+}
+.print-btn-text {
+        height: 20px;
+
+        /* Typo/Title Tiny */
+
+        font-family: 'Segoe UI';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 20px;
+        /* Colos/Typo/White/Title */
+
+        color: #FFFFFF;
+}

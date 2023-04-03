@@ -1,0 +1,79 @@
+.m-24 {
+  margin: 24px;
+}
+.mr-24 {
+  margin-right: 24px;
+}
+.mb-24 {
+  margin-bottom: 24px;
+}
+.m-16 {
+  margin: 16px;
+}
+
+._tn-container {
+  background: #FFFFFF;
+  border-radius: 8px;
+}
+._tt-container {
+    background: #FFFFFF;
+    border-radius: 8px;
+    padding: 16px;
+}
+._tbh-container {
+  background: #FFFFFF;
+  border-radius: 8px;
+}
+
+.input-field-box {
+    height: 40px;
+
+    background: #F7F8F9;
+    border-radius: 4px;
+
+}
+._tt-title {
+
+  height: 20px;
+  font-family: 'Segoe UI';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  /* Colors/Typo/Black/Title */
+
+  color: #000000;
+}
+._tt-divider {
+  margin: 12px 0;
+}
+.input-box {
+  height: 40px;
+}
+
+.input-title {
+  height: 20px;
+
+  font-family: 'Segoe UI';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+
+  color: #000000;
+}
+
+._tt-select-field {
+  height: 40px;
+
+  background: #F7F8F9;
+  border-radius: 4px;
+  .ant-select-selector {
+    height: 40px !important;
+    background: #F7F8F9;
+  }
+}
+
+.ant-row {
+  width: 100%;
+}

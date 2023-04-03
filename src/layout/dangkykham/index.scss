@@ -1,32 +1,4 @@
-.MainLayout {
-    position: relative;
-    width: '100%';
-    height: auto;
-
-    /* Colors/Background/Background */
-
-    background: #F1F1F4;
-    .Layout {
-        .Sider {
-            position: absolute;
-            width: 240px;
-            left: 0px;
-            top: 0px;
-            bottom: 0px;
-
-            background: #FFFFFF;
-        }
-        .Header {
-            position: absolute;
-            display: flex;
-            height: 64px;
-            left: 240px;
-            right: 0px;
-            top: 0px;
-
-            background: #FFFFFF;
-            align-items: center;
-        }
-
-    }
+.dkk-main {
+    display: flex;
+    background-color: #F1F1F4;
 }

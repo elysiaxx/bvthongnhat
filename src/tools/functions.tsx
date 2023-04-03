@@ -1,4 +1,5 @@
 import React from 'react';
+import TiepNhan from '../pages/dangkykham/tiepdon/tiepnhan';
 
 const menus = [
     {siderMenu: 'tiepdon', headerMenu: [
@@ -31,4 +32,25 @@ function getHeaderMenu(siderMenu: string) {
     return it?.headerMenu;
 }
 
-export {getHeaderMenu};
+function getDangKyKham(siderMenuSelected: string, headerMenuSelected: string) {
+    switch(siderMenuSelected) {
+        case 'tiepdon':
+            switch(headerMenuSelected) {
+                case 'tiepnhan':
+                    return <TiepNhan />;
+                default:
+                    return <></>
+            }
+        case 'thanhtoan':
+            switch(headerMenuSelected) {
+                case 'dsthanhtoan':
+                    return <TiepNhan />;
+                default:
+                    return <></>
+            }
+        default:
+            return <></>
+    }
+}
+
+export {getHeaderMenu, getDangKyKham};

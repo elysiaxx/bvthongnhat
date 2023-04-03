@@ -1,55 +1,47 @@
-.ant-menu-item-selected::after {
-    border-bottom: none !important;
-}
-.ant-menu-horizontal > .ant-menu-item::after,
-.ant-menu-horizontal > .ant-menu-submenu::after {
-  border-bottom: none !important;
-  transition: none !important;
+.mr-24 {
+  margin-right: 24px;
 }
 
-.Header-Box {
-    display: flex;
-    flex-direction: row;
+.header-container {
+  height: 64px;
+  background: #FFFFFF;
 }
 
-.HeaderMenu {
-/* Auto layout */
-
-display: flex;
-flex-direction: row;
-align-items: center;
-padding: 0px;
-
-position: absolute;
-width: 526px;
-height: 20px;
-left: 24px;
-top: 22px;
-border-bottom: none;
-}
-.Header-1 {
-    display: flex;
-}
-.Header-2 {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-
-    /* Auto layout */
-
-    flex-direction: row;
-    align-items: center;
-    padding: 0px;
-    gap: 16px;
-
-    position: absolute;
-    right: 24px;
-    top: calc(50% - 32px/2);
-}
-
-.ant-menu-item {
-
+.header-menu {
+  .ant-menu-item {
+    height: 20px;
     /* Typo/Title Tiny */
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    
+    display: flex;
+    align-items: center;
+
+    /* Colors/Typo/Black/Text Sub */
+    color: rgba(0, 0, 0, 0.4);
+
+  }
+  .ant-menu-item-selected {
+    color: #0040FF;
+  }
+  .ant-menu-title-content {
+    border: 0 !important;
+  }
+  .ant-menu-item::after {
+    border-bottom: none !important;
+  }
+}
+
+.account-avatar {
+  width: 32px;
+  height: 32px;
+  margin-right: 8px;
+}
+.account-name {
+  height: 20px;
 
     font-family: 'Segoe UI';
     font-style: normal;
@@ -58,24 +50,10 @@ border-bottom: none;
     line-height: 20px;
     /* identical to box height, or 143% */
 
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    /* Colors/Typo/Black/Title */
 
-    /* Colors/Use/Primary */
-
-    color: rgba(0, 0, 0, 0.4);
-
-
-
-    /* Inside auto layout */
-
-    flex: none;
-    order: 0;
-    flex-grow: 0;
+    color: #000000;
 }
-
-.ant-menu-item-divider {
-    border: 1px solid rgba(5, 5, 5, 0.06) !important;
-    height: 100%;
+.account-divider {
+  border: 1px solid #E3E3E6;
 }

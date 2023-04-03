@@ -1,0 +1,45 @@
+.lsck-container {
+    position: absolute;
+    width: 466px;
+    height: 464px;
+    left: 20px;
+    top: 20px;
+
+    background: #FFFFFF;
+    border-radius: 8px;
+}
+.ant-collapse {
+    background-color: #FFFFFF;
+}
+
+.ant-collapse-header-text {
+    width: 133px;
+    height: 20px;
+
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    /* identical to box height, or 143% */
+
+    display: flex;
+    align-items: center;
+
+    /* Colors/Typo/Black/Title */
+
+    color: #000000;
+}
+.collapse-table {
+    .ant-table-thead >tr>th {
+        background-color: #FFFFFF;
+        border-bottom: 0;
+    }
+    .ant-table-tbody >tr>td {
+        border-bottom: 0;
+        border-top: 1px solid #f0f0f0;
+    }
+}
+.ant-collapse-content-box {
+    padding: 0 !important;
+}
